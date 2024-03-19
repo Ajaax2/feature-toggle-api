@@ -20,8 +20,3 @@ func LoadConfig() {
 func GetServerPort() int {
 	return viper.GetInt("server.port")
 }
-
-func GetLogger(p string) *Logger {
-	logger = NewLogger(p)
-	return logger
-}

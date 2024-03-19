@@ -58,3 +58,8 @@ func (l *Logger) Warnf(format string, v ...interface{}) {
 func (l *Logger) Errorf(format string, v ...interface{}) {
 	l.err.Printf(format, v...)
 }
+
+func GetLogger(p string) *Logger {
+	logger = NewLogger(p)
+	return logger
+}
