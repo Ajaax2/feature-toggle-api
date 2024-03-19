@@ -1,0 +1,14 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "api de fts mobi em Go",
+        "title": "Feature Toggle API",
+        "contact": {
+            "name": "Ademar Junior"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api/v1",
+    "paths": {}
+}

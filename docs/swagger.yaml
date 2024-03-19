@@ -1,0 +1,10 @@
+basePath: /api/v1
+host: localhost:8080
+info:
+  contact:
+    name: Ademar Junior
+  description: api de fts mobi em Go
+  title: Feature Toggle API
+  version: "1.0"
+paths: {}
+swagger: "2.0"
