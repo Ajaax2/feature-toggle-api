@@ -2,20 +2,16 @@ package mongodb
 
 import (
 	"context"
-	"os"
 
+	"github.com/spf13/viper"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-var (
-	MONGODB_URL     = "MONGODB_URL"
-	MONGODB_USER_DB = "MONGODB_USER_DB"
-)
-
 func NewMongoDBConnection(ctx context.Context) (*mongo.Database, error) {
-	url := os.Getenv(MONGODB_URL)
-	database := os.Getenv(MONGODB_USER_DB)
+
+	url := viper.GetString("mongodb.url")
+	database := viper.GetString("mongodb.database")
 
 	client, err := mongo.Connect(
 		ctx,

@@ -1,19 +1,15 @@
 package router
 
 import (
-	"os"
+	"strconv"
 
+	config "github.com/Ajaax2/feature-toggle-api/configs"
 	"github.com/gin-gonic/gin"
 )
 
-var (
-	SERVER_PORT = "SERVER_PORT"
-)
-
 func Initialize() {
-	port := os.Getenv(SERVER_PORT)
+	port := strconv.Itoa(config.GetServerPort())
 	router := gin.Default()
 	InitializeRoutes(router)
 	router.Run(port)
 }
-
