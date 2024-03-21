@@ -1,7 +1,7 @@
 package router
 
 import (
-	docs "github.com/Ajaax2/feature-toggle-api/docs"
+	_ "github.com/Ajaax2/feature-toggle-api/docs"
 	"github.com/Ajaax2/feature-toggle-api/internal/handler"
 	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
@@ -10,9 +10,7 @@ import (
 
 func InitializeRoutes(router *gin.Engine) {
 
-	handler.Init()
 	basePath := "/api/v1"
-	docs.SwaggerInfo.BasePath = basePath
 	v1 := router.Group(basePath)
 	{
 		v1.GET("toggle", handler.GetAllFeatureToggleHandler)
@@ -22,5 +20,6 @@ func InitializeRoutes(router *gin.Engine) {
 		v1.DELETE("toggle/id", handler.DeleteFeatureToggleHandler)
 	}
 
+	router.SetTrustedProxies([]string{"local, localhost"})
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 }

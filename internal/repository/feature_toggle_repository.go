@@ -6,7 +6,7 @@ import (
 )
 
 type FeatureToggleRepository interface {
-	CreateFeatureToggle(ft *entity.FeatureToggle) (*entity.FeatureToggle, error)
+	CreateFeatureToggle(ft *entity.FeatureToggle)
 	FindById(id string) (*entity.FeatureToggle, error)
 	FindAll() ([]*entity.FeatureToggle, error)
 	FindByVersion(version string) (*entity.FeatureToggle, error)

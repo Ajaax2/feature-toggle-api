@@ -6,13 +6,13 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// @Router 			/feature [get]
-// @Summary 		Create Feature Toggle
-// @Description	 	Save fts in Db.
-// @Param	 		fts body request.
-// @Accept 			json
-// @Produce			json
-// @Sucess 			200 {object}
+// @router 			/feature [get]
+// @summary 		Create Feature Toggle
+// @description	 	Save fts in Db.
+// @param	 		fts body request.
+// @accept 			json
+// @produce			json
+// @sucess 			200 {object}
 func GetByIdFeatureToggleHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"msg": "GET",
