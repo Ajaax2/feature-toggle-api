@@ -9,5 +9,8 @@ func Initialize() {
 
 	router := gin.Default()
 	InitializeRoutes(router)
-	router.Run("localhost:" + viper.GetString("server.port"))
+	err := router.Run("localhost:" + viper.GetString("server.port"))
+	if err != nil {
+		return
+	}
 }
