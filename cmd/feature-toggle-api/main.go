@@ -1,7 +1,7 @@
 package main
 
 import (
-	config "github.com/Ajaax2/feature-toggle-api/configs"
+	"github.com/Ajaax2/feature-toggle-api/internal/config"
 	"github.com/Ajaax2/feature-toggle-api/internal/router"
 )
 
