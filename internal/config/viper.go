@@ -1,10 +1,20 @@
 package config
 
-import "github.com/spf13/viper"
+import (
+	"fmt"
+	"github.com/spf13/viper"
+)
 
 func Init() error {
-	viper.SetConfigName("./config")
+	viper.AddConfigPath(".")
+	viper.SetConfigName("config")
 	viper.SetConfigType("yaml")
 
-	return viper.ReadInConfig()
+	err := viper.ReadInConfig()
+
+	if err != nil {
+		return fmt.Errorf("Error on loading configs: %v", err)
+	}
+
+	return nil
 }
