@@ -13,7 +13,6 @@ func InitializeRoutes(router *gin.Engine) {
 	basePath := "/api/v1"
 	v1 := router.Group(basePath)
 	{
-		v1.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 		v1.GET("toggle", handler.GetAllFeatureToggleHandler)
 		v1.GET("toggle/id", handler.GetByIdFeatureToggleHandler)
 		v1.POST("toggle", handler.CreateFeatureToggleHandler)
@@ -21,4 +20,5 @@ func InitializeRoutes(router *gin.Engine) {
 		v1.DELETE("toggle/id", handler.DeleteFeatureToggleHandler)
 	}
 
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 }
