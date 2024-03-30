@@ -1,4 +1,4 @@
-package toggle
+package handler
 
 import (
 	"github.com/Ajaax2/feature-toggle-api/internal/model"
@@ -20,13 +20,13 @@ type createToggleResponse struct {
 // @Router /api/v1/toggle [post]
 func CreateFeatureToggleHandler(ctx *gin.Context) {
 
-	v, err := model.NewVersion("123")
-	toggle, err := model.NewFeatureToggle(v, "toggle", true)
+	version, err := model.NewVersion("00.00.00")
+	ft, err := model.NewFeatureToggle(version, "toggle", true)
 
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
-	ctx.JSON(http.StatusCreated, createToggleResponse{ID: toggle.ID})
+	ctx.JSON(http.StatusCreated, createToggleResponse{ID: ft.ID})
 }

@@ -3,7 +3,8 @@ host: localhost:8080
 info:
   contact:
     name: Ademar Junior
-  description: api de fts mobi em Go
+  description: Api responsável por gerenciar os recursos de Feature Toggle do sicredi
+    mobi.
   title: Feature Toggle API
   version: "1.0"
 paths: {}

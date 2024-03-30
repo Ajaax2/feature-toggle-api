@@ -1,11 +1,11 @@
-package toggle
+package handler
 
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
 
-// CreateFeatureToggleHandler
+// GetAllFeatureToggleHandler
 // @Summary Sumário do Endpoint
 // @Description Descrição detalhada do endpoint.
 // @Tags exemplo

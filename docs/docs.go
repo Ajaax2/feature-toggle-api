@@ -26,7 +26,7 @@ var SwaggerInfo = &swag.Spec{
 	BasePath:         "/api/v1",
 	Schemes:          []string{},
 	Title:            "Feature Toggle API",
-	Description:      "api de fts mobi em Go",
+	Description:      "Api responsável por gerenciar os recursos de Feature Toggle do sicredi mobi.",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",

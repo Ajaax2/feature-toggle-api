@@ -7,13 +7,11 @@ import (
 
 // @title 			Feature Toggle API
 // @version 		1.0
-// @description 	Api responsável por gerenciar os recursos de Feature Toggle do sicredi mobi.
+// @description 	control any fts in your application with this api.
 // @host 			localhost:8080
 // @contact.name 	Ademar Junior
 // @BasePath 		/api/v1
 func main() {
-
 	config.Init()
-	router.Initialize()
-
+	router.Init()
 }
