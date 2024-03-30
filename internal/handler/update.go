@@ -1,8 +1,9 @@
 package handler
 
 import (
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 // CreateFeatureToggleHandler
@@ -17,5 +18,4 @@ func UpdateFeatureToggleHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusNoContent, gin.H{
 		"msg": "UPDATE",
 	})
-
 }

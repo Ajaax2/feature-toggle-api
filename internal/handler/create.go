@@ -1,9 +1,10 @@
 package handler
 
 import (
+	"net/http"
+
 	"github.com/Ajaax2/feature-toggle-api/internal/model"
 	"github.com/gin-gonic/gin"
-	"net/http"
 )
 
 type createToggleResponse struct {
@@ -19,10 +20,8 @@ type createToggleResponse struct {
 // @Success 200 {object}  createToggleResponse
 // @Router /api/v1/toggle [post]
 func CreateFeatureToggleHandler(ctx *gin.Context) {
-
-	version, err := model.NewVersion("00.00.00")
+	version, err := model.NewVersion("123")
 	ft, err := model.NewFeatureToggle(version, "toggle", true)
-
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
